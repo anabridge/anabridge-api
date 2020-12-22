@@ -1,5 +1,3 @@
-## Anabridge-backend
-
 ## What is Anabridge?
 
 Anabridge helps organisations derive insights from their data in order to inform decision making. We are inspired by the endless possibilities in which data can be used to drive innovations and improve decision making in businesses.
