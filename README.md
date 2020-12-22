@@ -1,14 +1,14 @@
-## bridge-backend
+## Anabridge-backend
 
-## What is Bridge?
+## What is Anabridge?
 
-Bridge helps organisations derive insights from their data in order to inform decision making. We are inspired by the endless possibilities in which data can be used to drive innovations and improve decision making in businesses.
+Anabridge helps organisations derive insights from their data in order to inform decision making. We are inspired by the endless possibilities in which data can be used to drive innovations and improve decision making in businesses.
 
 ## System Architecture
 
-**Bridge platform** is composed of many microservices written in different languages that talk to each other using Istio.
+**Anabridge platform** is composed of many microservices written in different languages that talk to each other using Istio.
 
-The Bridge system architecture uses a mono repo for faster shipping. Each service has its own database. Consistency across these databases is maintained using an event driven approach. There is also an API gateway (Nginx) which clients use to access the rest of the services. The state of the miscroservices is monitored using PM2. Deployment pattern is one service per container using Docker.
+The Anabridge system architecture uses a mono repo for faster shipping. Each service has its own database. Consistency across these databases is maintained using an event driven approach. There is also an API gateway (Nginx) which clients use to access the rest of the services. The state of the miscroservices is monitored using PM2. Deployment pattern is one service per container using Docker.
 
 | Service                                        | Language               | Description                                                                                                                                                         |
 | ---------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,18 +33,18 @@ The Bridge system architecture uses a mono repo for faster shipping. Each servic
 
 1. **Running locally with “Docker for Desktop”** You will build and deploy microservices images to a single-node Kubernetes cluster running on your development machine.
 
-2. **Running on Google Compute Engine (GCE)”** You will build, upload and deploy the container images to a Kubernetes cluster on virtual machines in the cloud.
+2. **Running on Cloud Platforms”** You will build, upload and deploy the container images to a Kubernetes cluster on virtual machines in the cloud.
 
 ## Deployment
 
-To deploy on the Bridge platform
-cd bridge-backend/src/microservice-name
+To deploy onto the Anabridge platform
+cd anabridge-api/src/microservice-name
 
 **Build the image**
-docker build -t us.gcr.io/gcp-project-name/microservice-name .
+docker build -t us.gcr.io/cloud-service-project-name/microservice-name .
 
 **Run the container based on newly created image**
-docker run -d -n best -p host-port:container-port us.gcr.io/gcp-project-name/microservice-name
+docker run -d -n best -p host-port:container-port us.gcr.io/cloud-service-project-name/microservice-name
 
 **The flags for running the container**
 
@@ -56,7 +56,7 @@ docker run -d -n best -p host-port:container-port us.gcr.io/gcp-project-name/mic
   name you can use to specify the newly created container in subsequent commands. Above examples has the name as best.
 
 **Visit the application in REST client or Web browser**
-localhost:host-port. You should the application up and running. Now would be the time to run unit tests, for example:
+localhost:host-port. You should the application up and running. Now would be the time to run unit tests accordingly.
 
 **delete container after successful unit tests**
 docker rm --force best.
@@ -64,12 +64,12 @@ docker rm --force best.
 **Share images on DockerHub or Google Container Registry**
 docker push <host-name>/<GCP project>/<microservice-name>
 
-- Example: docker push us.gcr.io/bridge-backend/Bridge-api
+- Example: docker push us.gcr.io/anabridge-api/microservice-name
 
 ## Contributing
 
-We invite you to help us build this platform. Please look up the [contributing guide](https://github.com/bridge-patterns/bridge-backend/wiki) for details.
+We invite you to help us build this platform. Please look up the [contributing guide](https://github.com/anabridge/anabridge-api/wiki) for details.
 
 ## Issues
 
-Before reporting a problem, please check out the [issue guide](https://github.com/bridge-patterns/bridge-backend/wiki#reporting-issues).
+Before reporting a problem, please check out the [issue guide](https://github.com/anabridge/anabridge-api/wiki#reporting-issues).
